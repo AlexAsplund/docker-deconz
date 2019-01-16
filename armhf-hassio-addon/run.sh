@@ -16,13 +16,13 @@ HASSIO_DECONZ_VNC_PORT="$(jq --raw-output '.vnc.port' $CONFIG_PATH)"
 HASSIO_DECONZ_VNC_PASSWORD="$(jq --raw-output '.vnc.password' $CONFIG_PATH)"
 
 DECONZ_OPTS="--auto-connect=1 \
-        --dbg-info=$DEBUG_INFO \
-        --dbg-aps=$DEBUG_APS \
-        --dbg-zcl=$DEBUG_ZCL \
-        --dbg-zdp=$DEBUG_ZDP \
-        --dbg-otau=$DEBUG_OTAU \
-        --http-port=$DECONZ_WEB_PORT \
-        --ws-port=$DECONZ_WS_PORT"
+        --dbg-info=$HASSIO_DEBUG_INFO \
+        --dbg-aps=$HASSIO_DEBUG_APS \
+        --dbg-zcl=$HASSIO_DEBUG_ZCL \
+        --dbg-zdp=$HASSIO_DEBUG_ZDP \
+        --dbg-otau=$HASSIO_DEBUG_OTAU \
+        --http-port=$HASSIO_DECONZ_WEB_PORT \
+        --ws-port=$HASSIO_DECONZ_WS_PORT"
 
 echo "[Hass.io] Starting deCONZ Hass.io Addon..."
 echo "[Hass.io] Current deCONZ version: $DECONZ_VERSION"
